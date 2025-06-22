@@ -31,6 +31,7 @@ body {
     min-height: 100vh;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="%2300bfff" d="M16 2C16 2 6 14.5 6 21a10 10 0 0 0 20 0C26 14.5 16 2 16 2zm0 26a6 6 0 0 1-6-6c0-2.5 2.5-7.5 6-13.1C19.5 14.5 22 19.5 22 22a6 6 0 0 1-6 6z"/></svg>') 8 8, pointer;
 }
 
 .game-wrapper {
@@ -60,11 +61,12 @@ body {
 #game-container {
     width: 800px;
     height: 600px;
-    background-color: #e6f7ff;
+    background-color: #2E9DF7; /* charity: water blue for better yellow contrast */
     border: 2px solid #333;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="%2300bfff" d="M16 2C16 2 6 14.5 6 21a10 10 0 0 0 20 0C26 14.5 16 2 16 2zm0 26a6 6 0 0 1-6-6c0-2.5 2.5-7.5 6-13.1C19.5 14.5 22 19.5 22 22a6 6 0 0 1-6 6z"/></svg>') 8 8, pointer;
 }
 
 
@@ -90,24 +92,40 @@ body {
 
 .water-drop {
     position: absolute;
-    width: 60px;  /* increased from 40px */
-    height: 60px; /* increased from 40px */
-    background-color: #0099ff;
+    width: 60px;
+    height: 60px;
+    background: none;
     border-radius: 50%;
     animation: dropFall linear forwards;
     transform-origin: center;
     cursor: pointer;
-    padding: 15px;  /* Add padding for larger click area */
-    margin: -15px;  /* Offset padding to maintain visual size */
-    transition: transform 0.1s ease;  /* Smooth hover effect */
+    padding: 0;
+    margin: 0;
+    transition: transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.jerry-can-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    border-radius: 8px;
+    display: block;
+    background: transparent;
 }
 
 .water-drop:hover {
-    transform: scale(1.1);  /* Slight grow effect on hover */
+    transform: scale(1.1);
 }
 
 .bad-drop {
-    background-color: #ff4444;
+    background: none !important;
 }
 
 .game-title {
@@ -142,4 +160,26 @@ body {
     #game-container {
         height: 70vh;
     }
+}
+
+.cw-logo {
+    max-width: 340px;
+    width: 80vw;
+    height: auto;
+    margin: 0 auto 8px auto;
+    display: block;
+}
+
+@media (max-width: 500px) {
+    .cw-logo {
+        max-width: 90vw;
+    }
+}
+
+body, #game-container, button, .water-drop, .water-drop:active, .water-drop:hover, button:active, button:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="%2300bfff" d="M16 2C16 2 6 14.5 6 21a10 10 0 0 0 20 0C26 14.5 16 2 16 2zm0 26a6 6 0 0 1-6-6c0-2.5 2.5-7.5 6-13.1C19.5 14.5 22 19.5 22 22a6 6 0 0 1-6 6z"/></svg>') 8 8, pointer;
+}
+
+.bucket-drop, .bucket-drop:active, .bucket-drop:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect x="4" y="10" width="24" height="12" rx="6" fill="%23FFEB3B" stroke="%23FFC107" stroke-width="2"/><circle cx="10" cy="16" r="2" fill="%23FFC107"/><circle cx="22" cy="16" r="2" fill="%23FFC107"/><circle cx="16" cy="14" r="1.5" fill="%23FFF59D"/></svg>') 8 8, pointer !important;
 }
