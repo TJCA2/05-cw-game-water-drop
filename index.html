@@ -11,6 +11,14 @@
         <img src="img/cw_logo-horizontal.png" alt="charity: water logo" class="cw-logo" />
         <!-- <h1 class="game-title">Water Drop</h1> -->
         <p class="game-tagline">Catch yellow jerry cans, avoid red ones, and cleanup black oil spills to increase time!</p>
+        <div class="difficulty-panel">
+            <label for="difficulty-select"><strong>Difficulty:</strong></label>
+            <select id="difficulty-select">
+                <option value="easy">Easy</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
         <div class="score-panel">
             <div class="score">Score: <span id="score">0</span></div>
             <div class="timer">Time: <span id="time">30</span>s</div>
@@ -29,7 +37,12 @@
           </div>
         </div>
     </div>
-    
+    <footer class="cw-footer">
+        <p>
+            Learn more about <a href="https://www.charitywater.org/" target="_blank">charity: water</a> &nbsp;|&nbsp;
+            <a href="https://www.charitywater.org/donate" target="_blank">Donate now</a>
+        </p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
